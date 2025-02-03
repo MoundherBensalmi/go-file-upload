@@ -6,8 +6,8 @@ WORKDIR /app
 # Copy source code
 COPY . .
 
-# Build the Go application
-RUN go mod init fileupload && go mod tidy && go build -o app
+# Install dependencies (go mod tidy) and build the Go application
+RUN go mod tidy && go build -o app
 
 # Expose port 8080
 EXPOSE 8080
