@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  app:
+    image: go-file-upload
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - go_storage:/app/storage
+    restart: always
+
+volumes:
+  go_storage:
